@@ -1,0 +1,234 @@
+/**
+ * Copyright © 2015 The Regents of the University of Michigan
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and limitations under the License.
+ * 
+ * For more information, questions, or permission requests, please contact:
+ * Yongqun “Oliver” He - yongqunh@med.umich.edu
+ * Unit for Laboratory Animal Medicine, Center for Computational Medicine & Bioinformatics
+ * University of Michigan, Ann Arbor, MI 48109, USA
+ * He Group:  http://www.hegroup.org
+ */
+
+/**
+ * @file ext.okw.form.css
+ * @author Edison Ong
+ * @since Aug 01, 2015
+ * @comment 
+ */
+
+#okw-form-wrapper {
+	margin: 4px;
+	padding: 4px;
+	border: 1px solid;
+}
+
+#okw-form-wrapper .heading {
+	font-weight: bold;
+}
+
+#okw-form-wrapper .main {
+	
+}
+
+#okw-form-wrapper .subclass {
+	border: #99CCFF 1px solid;
+	margin-top:20px;
+}
+
+#okw-form-wrapper .subclass .heading {
+	font-weight: bold;
+}
+
+#okw-form-wrapper .subclass .main {
+	table-layout:fixed;
+	width:100%;
+}
+
+#okw-form-wrapper .subclass .main .input-label {
+	margin-left:40px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#okw-form-subclass-input {
+	margin-left:20px;
+	margin-top:5px;
+	margin-bottom:5px;
+	width:40%;
+}
+
+#okw-form-subclass-input-create {
+	margin-left:20px;
+	margin-top:5px;
+	margin-bottom:5px;
+	width:40%;
+}
+
+#okw-form-wrapper .subclass .queue {
+	background-color: #CBE5FF;
+}
+
+#okw-form-wrapper .subclass .queue-iri {
+	margin-left:40px;
+	margin-top:5px;
+	width:60%;
+}
+
+#okw-form-wrapper .subclass .queue-label {
+	margin-left:40px;
+	margin-top:5px;
+}
+
+#okw-form-wrapper .subclass .queue .delete {
+	border-radius: 4px;
+}
+
+#okw-form-wrapper .subclass .queue .clear {
+	border-radius: 4px;
+}
+
+#okw-form-wrapper .annotation {
+	border: #99CCFF 1px solid;
+	margin-top:20px;
+}
+
+#okw-form-wrapper .annotation .heading {
+	font-weight: bold;
+}
+
+#okw-form-wrapper .annotation .add {
+	margin-left:20px;
+}
+
+#okw-form-wrapper .annotation .main {
+	table-layout:fixed;
+	width:100%;
+}
+
+#okw-form-wrapper .annotation .queue {
+	background-color: #CBE5FF;
+}
+
+#okw-form-wrapper .annotation .queue-text {
+	margin-top:5px;
+	padding-left:20px;
+	padding-top:5px;
+	width:70%;
+}
+
+#okw-form-wrapper .annotation .queue-text-input {
+	width:80%;
+}
+
+#okw-form-wrapper .annotation .queue-type {
+	margin-top:5px;
+	padding-left:20px;
+	padding-top:5px;
+	width:30%;
+}
+
+#okw-form-wrapper .annotation .queue-type-input {
+	width:100%;
+}
+
+#okw-form-wrapper .annotation .queue .delete {
+	margin-top:5px;
+	border-radius: 4px;
+}
+
+#okw-form-wrapper .describe {
+	border: #99CCFF 1px solid;
+	margin-top:20px;
+}
+
+#okw-form-wrapper .describe .main {
+	table-layout:fixed;
+	width:100%;
+}
+
+#okw-form-wrapper .describe .term-input-label {
+	margin-left:20px;
+	width:80%;
+}
+
+#okw-form-wrapper .describe .term-input-label[readonly] {
+	background-color: #D3D3D3;
+}
+
+#okw-form-wrapper .describe .term-input-iri {
+	margin-left:20px;
+	width:80%;
+}
+
+#okw-form-wrapper .describe .term-input-iri[readonly] {
+	background-color: #D3D3D3;
+}
+
+#okw-form-wrapper .describe .term-select-type {
+	margin-left:20px;
+}
+
+#okw-form-wrapper .describe .term-select-type[disabled] {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    /*text-indent: 1px;
+    /text-overflow: '';*/
+}
+
+#okw-form-wrapper .axiom {
+	border: #99CCFF 1px solid;
+	margin-top:20px;
+}
+
+#okw-form-wrapper .axiom .heading {
+	font-weight: bold;
+}
+
+#okw-form-wrapper .axiom .add {
+	margin-left:20px;
+}
+
+#okw-form-wrapper .axiom .main {
+	table-layout:fixed;
+	width:100%;
+}
+
+#okw-form-wrapper .axiom .queue {
+	background-color: #CBE5FF;
+}
+
+#okw-form-wrapper .axiom .queue-text {
+	margin-top:5px;
+	padding-left:20px;
+	padding-top:5px;
+	width:70%;
+}
+
+#okw-form-wrapper .axiom .queue-text-input {
+	width:80%;
+}
+
+#okw-form-wrapper .axiom .queue-type {
+	margin-top:5px;
+	padding-left:20px;
+	padding-top:5px;
+	width:30%;
+}
+
+#okw-form-wrapper .axiom .queue-type-input {
+	width:100%;
+}
+
+#okw-form-wrapper .axiom .queue .delete {
+	margin-top:5px;
+	border-radius: 4px;
+}
