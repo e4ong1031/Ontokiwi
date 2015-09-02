@@ -1,3 +1,4 @@
+# Exclude Eclipse PHP configuration/setting files
 .settings/
 .buildpath
 .project
