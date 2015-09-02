@@ -302,6 +302,9 @@ class ImportOntology extends SpecialPage {
 				list( $wikiText, $axioms ) = AxiomParser::reformatWikiText( $ontAbbr, $wikiText, $axioms, true );
 				
 				$supClasses = array_keys( $rdf->getSupClass( $graph, $term->iri ) );
+				if ( empty( $supClasses ) ) {
+					$supClasses = array( $GLOBALS['okwRDFConfig']['Thing'] );
+				}
 				list( $wikiText, $supClasses ) = HierarchyParser::reformatWikiText( $ontAbbr, $wikiText, $supClasses );
 				
 				$common['label'] = $term->label;
