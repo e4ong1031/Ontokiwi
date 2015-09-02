@@ -29,21 +29,23 @@
 
 namespace OKW\Display;
 
-use tidy;
-
 use OKW\Ontology\OntologyValidator;
 
 class DisplayHelper {
 	
 	public static function tidyHTML( $html ) {
-		$tidy = new tidy();
-		$cleanHTML = $tidy->repairString( $html, array(
-				'indent' => true,
-				'indent-spaces' => 2,
-				'show-body-only' => true,
-				'merge-divs' => false,
-		) );
-		return $cleanHTML;
+		if ( extension_loaded( tidy ) ) {
+			$tidy = new \tidy();
+			$cleanHTML = $tidy->repairString( $html, array(
+					'indent' => true,
+					'indent-spaces' => 2,
+					'show-body-only' => true,
+					'merge-divs' => false,
+			) );
+			return $cleanHTML;
+		} else {
+			return $html;
+		}
 	}
 	
 	public static function getShortTerm( $term ) {
