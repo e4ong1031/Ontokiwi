@@ -29,7 +29,9 @@ $( "#okw-form-subclass-main" ).on( 'click', ".delete", function( event ) {
 	if ( $( "#okw-form-subclass-main tr").length > 1) {
 		$(this).parent('td').parent('tr').remove();
 	} else {
-		alert( "Term must have at least one parent!" );
+		if ( confirm( "Term should have at least one parent. Are you sure to delete?" ) ) {
+			$(this).parent('td').parent('tr').remove();
+		}
 	}
 } );
 

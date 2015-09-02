@@ -33,9 +33,13 @@ use SpecialPage;
 use MWException;
 use Title;
 
+use OKW\Display\DisplayHelper;
+
 use OKW\HTML\Special\ImportOntologyHTML;
 
 use OKW\Ontology\OntologyData;
+use OKW\Ontology\OntologyValidator;
+use OKW\Ontology\ManchesterSyntaxHandler;
 
 use OKW\Parser\CommonParser;
 use OKW\Parser\HierarchyParser;
@@ -45,8 +49,6 @@ use OKW\Parser\AxiomParser;
 use OKW\Store\RDFStore\RDFStore;
 use OKW\Store\RDFStore\RDFStoreFactory;
 use OKW\Store\SQLStore\SQLStore;
-use OKW\Ontology\ManchesterSyntaxHandler;
-use OKW\Display\DisplayHelper;
 
 set_time_limit( 300 );
 
@@ -259,11 +261,14 @@ class ImportOntology extends SpecialPage {
 			foreach( $classes as $index => $class ) {
 				$term = $ontology->parseTermByIRI( $class );
 				
-				$related = $ontology->parseTermRelated( $term );
-				$wikiText = "[[Category:$ontAbbr]]";
-				
 				$id = $term->id;
 				$filename = "$ontAbbr:$id";
+				if ( !OntologyValidator::isValidTitleText( $filename ) ) {
+					throw new MWException ( "Unable to process term: $id. Please check the correctness of the Ontology" );
+				}
+				
+				$related = $ontology->parseTermRelated( $term );
+				$wikiText = "[[Category:$ontAbbr]]";
 				
 				$title = Title::newFromText( $filename );
 				if ( $title->exists() ) {
@@ -297,6 +302,9 @@ class ImportOntology extends SpecialPage {
 				list( $wikiText, $axioms ) = AxiomParser::reformatWikiText( $ontAbbr, $wikiText, $axioms, true );
 				
 				$supClasses = array_keys( $rdf->getSupClass( $graph, $term->iri ) );
+				if ( empty( $supClasses ) ) {
+					$supClasses = array( $GLOBALS['okwRDFConfig']['Thing'] );
+				}
 				list( $wikiText, $supClasses ) = HierarchyParser::reformatWikiText( $ontAbbr, $wikiText, $supClasses );
 				
 				$common['label'] = $term->label;

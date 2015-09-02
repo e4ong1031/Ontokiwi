@@ -1,0 +1,11 @@
+Version 1.0.0
+ - Changed page header display css.
+ - Fixed IRI auto-update in term creation using form.
+ - Addressed importing term without parent term.
+ - Fixed auto-create term IRI when creating new ontology page.
+ - Pop-up confirm window when deleting last hierarchy term using form.
+ - DisplayHelper checks if tidy is loaded.
+ - Throw invalid term MWException in Special:Import_ontology.
+ - Removed default global "okw_object_properties".
+ - OntoKiWi initial commit.
+

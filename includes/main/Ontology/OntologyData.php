@@ -173,6 +173,12 @@ class OntologyData {
 			}
 		}
 		
+		if ( is_null( $id ) ) {
+			$lastIndex = array_pop( $allTerms );
+			$newIndex = $lastIndex + 1;
+			$id = str_repeat( '0', $this->digit - strlen($newIndex) ) . $newIndex;
+		}
+		
 		$term = self::makeClass( array(
 			'id' => $id,
 			'iri' => $this->prefix . $this->ontAbbr . '_' . $id,

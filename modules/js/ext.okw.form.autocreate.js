@@ -62,9 +62,9 @@ $( function() {
 	
 	$( "#okw-describe-iri-input" ).on( "change", function() {
 		var ontAbbr = $( "#okw-form-ontology" ).val();
-		var iri = $(this).val();
+		var iri = $( this ).val();
 		var id = iri.split("/").pop();
-		var title = ontAbbr + ':' + ontAbbr + '_' + id;
+		var title = ontAbbr + ':' + id;
 		//console.log(mw.config.get( ['wgTitle','wgPageName']));
 		mw.config.set(
 			{
