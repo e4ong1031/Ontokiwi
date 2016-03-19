@@ -258,11 +258,16 @@ class ImportOntology extends SpecialPage {
 			file_put_contents( $tmp . $filename, $fullname );
 			
 			$output = array();
+			
 			foreach( $classes as $index => $class ) {
+				if ( $class == $GLOBALS['okwRDFConfig']['Thing'] ) {
+					continue;
+				}
 				$term = $ontology->parseTermByIRI( $class );
 				
 				$id = $term->id;
 				$filename = "$ontAbbr:$id";
+				
 				if ( !OntologyValidator::isValidTitleText( $filename ) ) {
 					throw new MWException ( "Unable to process term: $id. Please check the correctness of the Ontology" );
 				}
