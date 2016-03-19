@@ -366,7 +366,6 @@ class RDFQueryHelper {
 					
 						$curNodeID = $curNode[$lists['rest']][0]['value'];
 						if ( $curNodeID = "http://www.w3.org/2002/07/owl#Nothing" ) {
-							print_r($curNodeID);
 							break;
 						}
 						$curNode = $rdfResult[$curNodeID];
