@@ -1,3 +1,11 @@
+Version 1.0.1:
+ - Merge branch 'develop'
+ - Fixed RDFQuery Thing, Nothing.
+ - Updated .gitignore file.
+ - Fixed untracked files
+ - Added .gitignore to repository.
+ - Added bumpversion.sh to repository.
+
 Version 1.0.0
  - Changed page header display css.
  - Fixed IRI auto-update in term creation using form.
